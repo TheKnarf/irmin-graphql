@@ -9,7 +9,7 @@ module Store_graphql = Irmin_graphql.Make(Store)
 
 let config =
   let head = Git.Reference.of_raw "refs/heads/master" in
-  Irmin_git.config ~head (Sys.getcwd ())
+  Irmin_git.config ~head (Sys.argv.(1))
 
 let () =
   let p = 
